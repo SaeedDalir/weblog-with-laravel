@@ -17,8 +17,10 @@
         <thead>
         <tr>
             <th>شناسه</th>
-            <th>توضیحات</th>
+            <th>متن پیام</th>
+            <th>نام</th>
             <th>مطلب</th>
+            <th>ایمیل</th>
             <th>زمان ارسال</th>
             <th>وضعیت</th>
             <th>عملیات</th>
@@ -29,7 +31,9 @@
             <tr>
                 <td>{{$comment->id}}</td>
                 <td><a href="{{route('comments.edit',$comment->id)}}">{{$comment->description}}</a></td>
+                <td>{{$comment->name}}</td>
                 <td>{{$comment->post->title}}</td>
+                <td>{{$comment->email}}</td>
                 <td>{{\Hekmatinasser\Verta\Verta::persianNumbers(\Hekmatinasser\Verta\Verta::instance($comment->created_at)->formatJalaliDatetime())}}</td>
                 <td>
                     @if($comment->status == 0)

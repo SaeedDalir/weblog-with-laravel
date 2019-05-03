@@ -10,7 +10,7 @@
     @if(Session::has('update_category'))
         <div class="alert alert-success">{{session('update_category')}}</div>
     @endif
-    <h3 class="p-b-1">لیست مطالب</h3>
+    <h3 class="p-b-1">لیست دسته بندی ها</h3>
     <table class="table table-hover">
         <thead>
         <tr>

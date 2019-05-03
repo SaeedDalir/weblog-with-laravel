@@ -17,11 +17,11 @@
     </script>
 @endsection
 @section('content')
-    @if(Session::has('delete_photos'))
-        <div class="alert alert-danger">{{session('delete_photos')}}</div>
+    @if(Session::has('delete_messages'))
+        <div class="alert alert-danger">{{session('delete_messages')}}</div>
     @endif
-    <h3 class="p-b-1">لیست فایل ها</h3>
-    <form method="POST" action="/admin/delete/media" class="form-inline">
+    <h3 class="p-b-1">لیست پیام ها</h3>
+    <form method="POST" action="/admin/delete/message" class="form-inline">
         {{@csrf_field()}}
         {{@method_field('DELETE')}}
         <div class="form-group m-b-1">
@@ -35,24 +35,25 @@
         <tr>
             <td><input type="checkbox" id="options"></td>
             <th>شناسه</th>
-            <th>تصویر</th>
-            <th>کاربر</th>
-            <th>زمان بارگزاری</th>
+            <th>نام</th>
+            <th>متن پیام</th>
+            <th>ایمیل</th>
+            <th>زمان ارسال</th>
         </tr>
         </thead>
         <tbody>
-        @foreach($photos as $photo)
+        @foreach($messages as $message)
             <tr>
-                <td><input class="checkbox" type="checkbox" name="checkBoxArray[]" value="{{$photo->id}}"></td>
-                <td>{{$photo->id}}</td>
-                <td><img src="{{$photo->path}}" width="150" height="100px"></td>
-                <td>{{$photo->user->name}}</td>
-                <td>{{\Hekmatinasser\Verta\Verta::persianNumbers(\Hekmatinasser\Verta\Verta::instance($photo->created_at)->formatJalaliDatetime())}}</td>
+                <td><input class="checkbox" type="checkbox" name="checkBoxArray[]" value="{{$message->id}}"></td>
+                <td>{{$message->id}}</td>
+                <td>{{$message->name}}</td>
+                <td>{{$message->message}}</td>
+                <td>{{$message->email}}</td>
+                <td>{{\Hekmatinasser\Verta\Verta::persianNumbers(\Hekmatinasser\Verta\Verta::instance($message->created_at)->formatJalaliDatetime())}}</td>
             </tr>
         @endforeach
         </tbody>
     </table>
     </form>
 
-    <div class="col-md-12 text-md-center">{{$photos->links()}}</div>
 @endsection

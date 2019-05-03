@@ -17,8 +17,8 @@ class DashboardController extends Controller
         $postsCount = Post::count();
         $categoriesCount = Category::count();
         $photosCount = Photo::count();
-        $users = User::orderBy('created_at','desc')->limit(8)->get();
+        $most_read_posts = Post::orderBy('count','desc')->limit(8)->get();
         $posts = Post::orderBy('created_at','desc')->limit(8)->get();
-        return view('admin.dashboard.index', compact(['usersCount','postsCount','categoriesCount','photosCount','users','posts']));
+        return view('admin.dashboard.index', compact(['usersCount','postsCount','categoriesCount','photosCount','most_read_posts','posts']));
     }
 }

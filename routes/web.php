@@ -26,8 +26,9 @@ Route::group(['middleware'=>'admin'], function (){
     Route::get('admin/dashboard','Admin\DashboardController@index')->name('dashboard.index');
     Route::resource('admin/comments','Admin\CommentController');
     Route::delete('admin/delete/comment','Admin\CommentController@deleteAll')->name('comment.delete.all');
-
     Route::post('admin/actions/{id}','Admin\CommentController@actions')->name('comments.actions');
+    Route::get('admin/messages','Admin\AdminMessageController@index')->name('messages.index');
+    Route::delete('admin/delete/message','Admin\AdminMessageController@deleteAll')->name('message.delete.all');
 });
 Route::group(['middleware'=>'writer'], function (){
 });
@@ -38,5 +39,7 @@ Route::get('/posts/{slug}','Frontend\PostController@show')->name('frontend.posts
 Route::get('/search','Frontend\PostController@searchTitle')->name('frontend.posts.search');
 Route::post('/comments/{postId}','Frontend\CommentController@store')->name('frontend.comments.store');
 Route::post('/comments','Frontend\CommentController@reply')->name('frontend.comments.reply');
-Route::get('/category/{slug}/posts','Frontend\PostController@categoryPosts')->name('frontend.categories.categoryPosts');
+Route::get('/categories/{slug}/posts','Frontend\PostController@categoryPosts')->name('frontend.categories.categoryPosts');
+Route::get('/contact','Frontend\MainController@contactForm')->name('frontend.contact.contactForm');
+Route::post('/contact/messages','Frontend\MainController@storeMessage')->name('frontend.contact.storeMessage');
 

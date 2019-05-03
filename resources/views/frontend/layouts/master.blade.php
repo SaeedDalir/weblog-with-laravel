@@ -7,7 +7,7 @@
 @yield('head')
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-    <title>وبـلاگ برنامه نویسی</title>
+    <title>برنامه نویسی تحت وب</title>
 
     <!-- Google font -->
     <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:700%7CNunito:300,600" rel="stylesheet">
@@ -37,7 +37,7 @@
                 @yield('last_posts')
 
             <!-- row -->
-            <div class="row">
+            <div class="row" style="margin-top: 25px">
                 <div class="col-md-8">
                     <div class="row">
 
@@ -63,60 +63,9 @@
     <!-- /section -->
     <!-- Footer -->
     <footer id="footer">
-        <!-- container -->
-        <div class="container">
-            <!-- row -->
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="footer-widget">
-                        <div class="footer-logo">
-                            <a href="index.html" class="logo"><img src="{{asset('/img/php-logo1.png')}}" alt=""></a>
-                        </div>
-                        <ul class="footer-nav">
-                            <li><a href="#">Privacy Policy</a></li>
-                            <li><a href="#">Advertisement</a></li>
-                        </ul>
-                        <div class="footer-copyright">
-                                    <span>&copy; <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-    Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-                                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="footer-widget">
-                                <h3 class="footer-title">About Us</h3>
-                                <ul class="footer-links">
-                                    <li><a href="about.html">About Us</a></li>
-                                    <li><a href="#">Join Us</a></li>
-                                    <li><a href="contact.html">Contacts</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="footer-widget">
-                                <h3 class="footer-title">Catagories</h3>
-                                <ul class="footer-links">
-                                    <li><a href="category.html">Web Design</a></li>
-                                    <li><a href="category.html">JavaScript</a></li>
-                                    <li><a href="category.html">Css</a></li>
-                                    <li><a href="category.html">Jquery</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-3">
-                </div>
-
+            <div class="footer-copyright text-center">
+                <span>2019 © Copyright کليه حقوق مادی و معنوی محفوظ است و هرگونه کپی برداری پیگرد قانونی دارد.</span>
             </div>
-            <!-- /row -->
-        </div>
-        <!-- /container -->
     </footer>
     <!-- /Footer -->
     <script src="{{asset('js/all.js')}}"></script>

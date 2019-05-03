@@ -48,6 +48,7 @@
             <th>عنوان</th>
             <th>توضیحات</th>
             <th>دسته بندی</th>
+            <th>بازدیدها</th>
             <th>وضعیت</th>
             <th>زمان ایجاد</th>
         </tr>
@@ -61,6 +62,7 @@
                 <td><a href="{{route('posts.edit',$post->id)}}">{{$post->title}}</a></td>
                 <td>{{str_limit($post->description,80)}}</td>
                 <td>{{$post->category->title}}</td>
+                <td>{{$post->count}}</td>
                 <td>
                     @if($post->status == 0)
                         <span class="tag tag-pill tag-danger font-sm">منتشر نشده</span>

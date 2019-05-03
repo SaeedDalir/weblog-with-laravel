@@ -6,7 +6,7 @@
     <div class="category-widget">
         <ul>
             @foreach($categories as $category)
-                <li><a href="{{route('frontend.categories.categoryPosts',$category->id)}}" class="cat-1">{{$category->title}}</a></li>
+                <li><a href="{{route('frontend.categories.categoryPosts',$category->slug)}}"  class="cat-3">{{$category->title}}<span class="pull-left">{{$category->posts->count()}}</span></a></li>
             @endforeach
         </ul>
     </div>
@@ -14,35 +14,19 @@
 <!-- post widget -->
 <div class="aside-widget">
     <div class="section-title">
-        <h2>Most Read</h2>
+        <h2>محبوب ترین ها</h2>
     </div>
-
-    <div class="post post-widget">
-        <a class="post-img" href="blog-post.html"><img src="{{asset('/img/widget-1.jpg')}}" alt=""></a>
-        <div class="post-body">
-            <h3 class="post-title"><a href="blog-post.html">Tell-A-Tool: Guide To Web Design And Development Tools</a></h3>
+    @foreach($most_read_posts as $most_read_post)
+        <div class="post post-widget">
+            <a class="post-img" href="{{route('frontend.posts.show',$most_read_post->slug)}}"><img src="{{$most_read_post->photo_id ? $most_read_post->photo->path : "/img/avatar.jpg"}}" height="80px"></a>
+            <div class="post-body">
+                <h4><a href="{{route('frontend.posts.show',$most_read_post->slug)}}">{{$most_read_post->title}}</a></h4>
+            </div>
+            <div class="footer-fixed">
+                <span class="small">  منتشر شده توسط <span style="color:blue;font-weight: bold">{{$most_read_post->user->name}}</span></span>
+            </div>
         </div>
-    </div>
-
-    <div class="post post-widget">
-        <a class="post-img" href="blog-post.html"><img src="{{asset('/img/widget-2.jpg')}}" alt=""></a>
-        <div class="post-body">
-            <h3 class="post-title"><a href="blog-post.html">Pagedraw UI Builder Turns Your Website Design Mockup Into Code Automatically</a></h3>
-        </div>
-    </div>
-
-    <div class="post post-widget">
-        <a class="post-img" href="blog-post.html"><img src="{{asset('/img/widget-3.jpg')}}" alt=""></a>
-        <div class="post-body">
-            <h3 class="post-title"><a href="blog-post.html">Why Node.js Is The Coolest Kid On The Backend Development Block!</a></h3>
-        </div>
-    </div>
-
-    <div class="post post-widget">
-        <a class="post-img" href="blog-post.html"><img src="{{asset('/img/widget-4.jpg')}}" alt=""></a>
-        <div class="post-body">
-            <h3 class="post-title"><a href="blog-post.html">Tell-A-Tool: Guide To Web Design And Development Tools</a></h3>
-        </div>
-    </div>
+        <hr>
+    @endforeach
 </div>
 <!-- /post widget -->

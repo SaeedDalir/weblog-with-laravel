@@ -58,21 +58,23 @@
     </div>
     <div>
         <div class="col-md-6">
-            <h6 class="p-b-1">آخرین کاربران</h6>
+            <h6 class="p-b-1">محبوب ترین ها</h6>
             <table class="table table-hover">
                 <thead>
                 <tr>
-                    <th>نام</th>
-                    <th>ایمیل</th>
-                    <th>زمان عضویت</th>
+                    <th>عنوان</th>
+                    <th>دسته بندی</th>
+                    <th>تعداد بازدیدها</th>
+                    <th>زمان ایجاد</th>
                 </tr>
                 </thead>
                 <tbody>
-                @foreach($users as $user)
+                @foreach($most_read_posts as $most_read_post)
                     <tr>
-                        <td><a href="{{route('users.edit',$user->id)}}">{{$user->name}}</a></td>
-                        <td>{{$user->email}}</td>
-                        <td>{{\Hekmatinasser\Verta\Verta::persianNumbers(\Hekmatinasser\Verta\Verta::instance($user->created_at)->formatDifference(\Hekmatinasser\Verta\Verta::now()))}}</td>
+                        <td><a href="{{route('posts.edit',$most_read_post->id)}}">{{$most_read_post->title}}</a></td>
+                        <td>{{$most_read_post->category->title}}</td>
+                        <td>{{$most_read_post->count}}</td>
+                        <td>{{\Hekmatinasser\Verta\Verta::persianNumbers(\Hekmatinasser\Verta\Verta::instance($most_read_post->created_at)->formatDifference(\Hekmatinasser\Verta\Verta::now()))}}</td>
                     </tr>
                 @endforeach
                 </tbody>
@@ -85,6 +87,7 @@
                 <tr>
                     <th>عنوان</th>
                     <th>دسته بندی</th>
+                    <th>تعداد بازدیدها</th>
                     <th>زمان ایجاد</th>
                 </tr>
                 </thead>
@@ -93,6 +96,7 @@
                     <tr>
                         <td><a href="{{route('posts.edit',$post->id)}}">{{$post->title}}</a></td>
                         <td>{{$post->category->title}}</td>
+                        <td>{{$post->count}}</td>
                         <td>{{\Hekmatinasser\Verta\Verta::persianNumbers(\Hekmatinasser\Verta\Verta::instance($post->created_at)->formatDifference(\Hekmatinasser\Verta\Verta::now()))}}</td>
                     </tr>
                 @endforeach

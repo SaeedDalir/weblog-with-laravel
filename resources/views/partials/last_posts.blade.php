@@ -11,7 +11,7 @@
                 <a class="post-img" href="{{route('frontend.posts.show',$last_post->slug)}}"><img src="{{$last_post->photo_id ? $last_post->photo->path : "/img/avatar.jpg"}}" width="750" height="300"></a>
                 <div class="post-body">
                     <div class="post-meta">
-                        <a class="post-category cat-1" href="category.html">{{$last_post->category->title}}</a>
+                        <a class="post-category cat-1" href="{{route('frontend.categories.categoryPosts',$last_post->category->slug)}}">{{$last_post->category->title}}</a>
                         <a>در : </a>
                         <span class="post-date">{{(\Hekmatinasser\Verta\Verta::persianNumbers(\Hekmatinasser\Verta\Verta::instance($last_post->created_at)->format('%d، %B %Y')))}}</span>
                     </div>
