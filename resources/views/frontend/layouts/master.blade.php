@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 @yield('head')
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-
-    <title>برنامه نویسی تحت وب</title>
+    <link href="{{asset('/img/favicon.ico')}}" rel="shortcut icon">
+    <title>وب آرتیـکل | Web Article</title>
 
     <!-- Google font -->
     <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:700%7CNunito:300,600" rel="stylesheet">
@@ -33,14 +33,11 @@
         <!-- container -->
         <div class="container">
             <!-- row -->
-
                 @yield('last_posts')
-
             <!-- row -->
             <div class="row" style="margin-top: 25px">
                 <div class="col-md-8">
                     <div class="row">
-
                         @yield('content')
                     </div>
                 </div>
@@ -64,7 +61,7 @@
     <!-- Footer -->
     <footer id="footer">
             <div class="footer-copyright text-center">
-                <span>2019 © Copyright کليه حقوق مادی و معنوی محفوظ است و هرگونه کپی برداری پیگرد قانونی دارد.</span>
+                <span>2019 © Copyright کليه حقوق مادی و معنوی برای Web-Article محفوظ است و هرگونه کپی برداری پیگرد قانونی دارد.</span>
             </div>
     </footer>
     <!-- /Footer -->

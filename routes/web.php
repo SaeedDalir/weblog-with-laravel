@@ -19,7 +19,6 @@ Route::group(['middleware'=>'admin'], function (){
     Route::resource('admin/users','Admin\AdminUserController');
     Route::resource('admin/posts','Admin\AdminPostController');
     Route::delete('admin/delete/post','Admin\AdminPostController@deleteAll')->name('post.delete.all');
-
     Route::resource('admin/categories','Admin\AdminCategoryController');
     Route::resource('admin/photos','Admin\AdminPhotoController');
     Route::delete('admin/delete/media','Admin\AdminPhotoController@deleteAll')->name('photo.delete.all');
@@ -30,10 +29,6 @@ Route::group(['middleware'=>'admin'], function (){
     Route::get('admin/messages','Admin\AdminMessageController@index')->name('messages.index');
     Route::delete('admin/delete/message','Admin\AdminMessageController@deleteAll')->name('message.delete.all');
 });
-Route::group(['middleware'=>'writer'], function (){
-});
-
-
 Route::get('/','Frontend\MainController@index');
 Route::get('/posts/{slug}','Frontend\PostController@show')->name('frontend.posts.show');
 Route::get('/search','Frontend\PostController@searchTitle')->name('frontend.posts.search');

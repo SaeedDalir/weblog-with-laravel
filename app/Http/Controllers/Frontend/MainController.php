@@ -20,7 +20,10 @@ class MainController extends Controller
             ->where('status',1)
             ->orderBy('created_at','desc')
             ->paginate(6);
-        $last_posts = Post::with('user','category','photo')->limit(6)->get();
+        $last_posts = Post::with('user','category','photo')
+            ->where('status',1)
+            ->orderBy('created_at','desc')
+            ->take(6)->get();
         $categories = Category::all();
         $most_read_posts = Post::with('photo','user')
             ->where('status',1)

@@ -8,6 +8,7 @@
     <meta name="description" content="Roxo Administrator">
     <meta name="author" content="Masoud Salehi">
     <meta name="keyword" content="Bootstrap Data">
+    <link href="{{asset('/img/favicon.ico')}}" rel="shortcut icon">
 
     <title>صفحه مدیریت</title>
 
@@ -138,9 +139,9 @@
 </main>
 
 <footer class="footer">
-    <span class="pull-right">
-            Powered by CoreUI
-        </span>
+    <div class="footer-copyright">
+        <span>2019 © Copyright کليه حقوق مادی و معنوی برای Web-Article محفوظ است و هرگونه کپی برداری پیگرد قانونی دارد.</span>
+    </div>
 </footer>
 
 <script src="{{asset('/admin/js/app.js')}}"></script>

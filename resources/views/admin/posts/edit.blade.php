@@ -10,10 +10,6 @@
 // Load the German interface.
             language: 'fa'
         });
-        CKEDITOR.replace('meta_description', {
-// Load the German interface.
-            language: 'fa'
-        });
     </script>
 @endsection
 @section('content')
@@ -21,7 +17,7 @@
     <div class="col-md-3"><img src="{{$post->photo_id ? $post->photo->path : "/img/avatar.jpg"}}" class="img-fluid"></div>
     <div class="col-md-9">
         @include('partials.form-errors')
-        {!! Form::model($post ,['method'=>'PATCH','action'=>['Admin\AdminPostController@update',$post->id],'files'=>true]) !!}
+        {!! Form::model($post,['method'=>'PATCH','action'=>['Admin\AdminPostController@update',$post->id],'files'=>true]) !!}
         <div class="form-group">
             {!! Form::label('title','عنوان:') !!}
             {!! Form::text('title',$post->title,['class'=>'form-control']) !!}
@@ -48,7 +44,7 @@
         </div>
         <div class="form-group">
             {!! Form::label('meta_description','متا توضیحات:') !!}
-            {!! Form::textarea('meta_description',$post->meta_description,['class'=>'form-control','id'=>'meta_description']) !!}
+            {!! Form::textarea('meta_description',$post->meta_description,['class'=>'form-control']) !!}
         </div>
         <div class="form-group">
             {!! Form::label('meta_keywords','متا برچسب ها:') !!}

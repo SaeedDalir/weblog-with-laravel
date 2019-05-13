@@ -58,7 +58,7 @@
     </div>
     <div>
         <div class="col-md-6">
-            <h6 class="p-b-1">محبوب ترین ها</h6>
+            <h5 class="p-b-1"><strong>محبوب ترین ها</strong></h5>
             <table class="table table-hover">
                 <thead>
                 <tr>
@@ -81,7 +81,7 @@
             </table>
         </div>
         <div class="col-md-6">
-            <h6 class="p-b-1">آخرین مطالب</h6>
+            <h5 class="p-b-1"><strong>آخرین مطالب</strong></h5>
             <table class="table table-hover">
                 <thead>
                 <tr>

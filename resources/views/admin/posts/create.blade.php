@@ -10,10 +10,6 @@
 // Load the German interface.
             language: 'fa'
         });
-        CKEDITOR.replace('meta_description', {
-// Load the German interface.
-            language: 'fa'
-        });
     </script>
 @endsection
 @section('content')
@@ -47,7 +43,7 @@
         </div>
         <div class="form-group">
             {!! Form::label('meta_description','متا توضیحات:') !!}
-            {!! Form::textarea('meta_description',null,['class'=>'form-control','id'=>'meta_description']) !!}
+            {!! Form::textarea('meta_description',null,['class'=>'form-control']) !!}
         </div>
         <div class="form-group">
             {!! Form::label('meta_keywords','متا برچسب ها:') !!}
